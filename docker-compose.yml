@@ -1,0 +1,16 @@
+version: "3" 
+services:
+  fluentd:
+    # image: fluent/fluentd:v1.14.6-1.1
+    # image: fluent/fluentd:v0.14.25
+    image: fluent/fluentd:v0.12.43
+    tty: true
+    working_dir: /src
+    volumes:
+      - .:/src
+  fluentbit:
+    image: fluent/fluent-bit:arm64v8-1.8.12
+    tty: true
+    working_dir: /src
+    volumes:
+      - .:/src
